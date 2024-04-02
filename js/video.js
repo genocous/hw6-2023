@@ -30,27 +30,26 @@ function pauseVideo() {
 	console.log("Pause Video");
 }
 
-// Slow Down Button	- slow down the current video speed each time the button is clicked and log the new speed to the console. Change it by an amount proportional to the slow down. If you slow down three times and then speed up three times, you should be within 5 digits of 100% again.
+// Slow Down Button- slow down the current video speed each time the button is clicked and log the new speed to the console. Change it by an amount proportional to the slow down. If you slow down three times and then speed up three times, you should be within 5 digits of 100% again.
 function slowDown() {
-	video.playbackRate *= 0.95;
+	video.playbackRate *= 0.9;
 	console.log("New speed is " + video.playbackRate);
 }
 
 // Speed Up Button - increase the current video speed each time the button is clicked and log the new speed to the console. Change it by an amount proportional to the slow down. If you slow down three times and then speed up three times, you should be within 5 digits of 100% again. 
 function speedUp() {
-	video.playbackRate /= 0.95;
+	video.playbackRate /= 0.9;
 	console.log("New speed is " + video.playbackRate);
 }
 
 // Skip Ahead Button - skip ahead 10 seconds. If the video length has been exceeded, go back to the start of the video, no farther. Log the current location of the video. 
 function skipAhead() {
-	if (video.currentTime + 15 < video.duration) {
-		video.currentTime += 15;
-	} else {
-		video.currentTime = 0;
-		video.play();
-	}
-	console.log("Current location " + video.currentTime);
+    if (video.currentTime + 10 < video.duration) {
+        video.currentTime += 10;
+    } else {
+        video.currentTime = 0;
+    }
+    console.log("Current location " + video.currentTime);
 }
 
 // Mute Button - mute/unmute video and update button text
